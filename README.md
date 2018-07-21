@@ -2,6 +2,7 @@ Project-2-Full-stack-Application
 
 Overview
 
+
 This second project is my first foray into building a full-stack application. I’ll be building an Express app, which means I’ll be learning about what it takes to build a functional application from the ground up myself.
 I’ll exercise simple, clean creativity on this project, sketch some wire frames before I start, and write a user story to define what my users will want to do with the app.
 
@@ -18,6 +19,7 @@ Code will be written semantically clean in HTML, CSS3 and JavaScript, as well as
 After application build, it will be deployed online and accessible to the public.
 
 User story.
+
 
 Tasks and Notes.
 Application will be able to save tasks, which can also be edited and have an additional note added when needed. Tasks as well as notes will be able to be viewed by pressing the View Tasks and Notes button. After viewing the tasks and notes being displayed, choose a task to view by clicking on one of the task links. The Task and notes page will appear and you will be able to edit or delete completed or no longer need to do tasks. Click on the home link located on the navigation bar on the top of app screen to return to the main landing page. All tasks and notes as well as users login, sign up information will be stored in the application database.
