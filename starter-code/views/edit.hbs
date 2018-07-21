@@ -1,0 +1,21 @@
+
+<h1 class="task-page-title">Edit and Update Your Tasks Here</h1>
+<br><br>
+
+<form action ="/task/{{task.id}}/edit" method="post">
+    <label id="label-1">Task Name: <input type="text" name="name" placeholder="Add a task name" value="{{task.name}}"></label>
+    <label id="label-2">Enter task status:<input list="browsers" name="myBrowser" value="{{task.status}}"/></label>
+        <datalist id="browsers">
+          <option value="Scheduled">
+          <option value="Pending">
+          <option value="In Process">
+          <option value="On Hold">
+          <option value="Completed">
+          <option value="Other">
+        </datalist>
+    <label id="label-3">Task Notes:<input type="text" name="info" placeholder="Enter task notes" value="{{task.info}}"></label>
+    <button id="btn1" type="submit">Edit A Task</button>
+
+</form>
+
+<img class="note-pad-2" src="/images/note-pad-pencil.png">

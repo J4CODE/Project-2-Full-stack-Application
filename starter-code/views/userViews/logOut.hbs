@@ -1,0 +1,22 @@
+<body class="logout-page">
+
+  <h1 class="second-title">Logout of Notetastic Here</h1>
+
+<div>
+<h1>Logout</h1>
+<form action="/logout" method="post">
+  <label>Username</label>
+  <input type="text" name="username">
+  <label>Password</label>
+  <input type="password" name="password">
+  <button>Submit</button>
+</form>
+{{#if message }}
+<div>{{ message }}</div>
+{{/if}}
+</div>
+
+<img class="note-pad-2" src="/images/note-pad-pencil.png">
+
+
+</body>

@@ -1,0 +1,29 @@
+<div class="main-body">
+<h1 class="task-page-title">This is the Task and Notes Page</h1>
+<br><br>
+{{theTask.name}}
+{{theTask.info}}
+{{theTask.comments}}
+{{theTask.note}}
+{{theTask.status}}
+
+<form action="/task/{{theTask.id}}/delete" method="post">
+
+<br><br>
+
+<button class="delete-button">Delete this task</button> <br>
+ <br>
+
+</form>
+
+{{!-- ------------------------------------------------------------------------- --}}
+
+<form action="/task/{{theTask.id}}/edit" method="get">
+
+
+<button class="edit-button">Edit this task</button>
+
+<img class="note-pad-2" src="/images/note-pad-pencil.png">
+
+</form>
+</div>

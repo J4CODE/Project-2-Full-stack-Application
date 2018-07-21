@@ -1,0 +1,119 @@
+<html>
+  <head>
+    <title>Notetastic</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Caveat+Brush' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js">
+    <link href="/public/images/if_notepad_286677.ico" type="image/ico">
+    <link href="/styles.css" rel="stylesheet">
+  </head>
+  <body class="main-body">
+    <h1 class="main-title">{{title}}</h1>
+    <br>
+    <img class="note-pad" src="/images/note-pad-pencil.png">
+    <br>
+    <h4 class="tagline1">A better way to complete tasks and add a note reminder, if needed.</h4>
+    <br> {{#if theUser}}
+    <div>
+      {{theUser.username}}
+    </div>
+    {{/if}} {{#if message}}
+    <h1 id="message">{{message}}</h1>
+    {{/if}}
+
+    <div class="container">
+      <h1 class="second-title">Welcome to Notetastic</h1>
+      <br><br>
+
+    <div class="parent">
+      <a href="/signup" class="btn btn-custom">Sign Up</a>
+      <a href="/login" class="btn btn-custom">Log In</a>
+      <a href="/logout" class="btn btn-custom">Log Out</a>
+    </div>
+
+      <br>
+      <br>
+      <br>
+      
+      <form action="/tasks/create" method="post">
+        <label id="label-1">Task Name:
+        <input type="text" name="name" placeholder="Add a task name">
+        </label>
+        <label id="label-2">Enter task status:
+        <input list="browsers" name="myBrowser" />
+        </label>
+        <datalist id="browsers">
+          <option value="Scheduled">
+          <option value="Pending">
+          <option value="In Process">
+          <option value="On Hold">
+          <option value="Completed">
+          <option value="Other">
+        </datalist>
+        <label id="label-3">Task Notes:
+        <input type="text" name="info" placeholder="Enter task notes">
+        </label>
+        <button id="btn1" type="submit">Add A Task</button>
+        {{!-- ----------------------------------------------------------------------------------------- --}}
+        <!-- Button trigger modal -->
+        <button id="btn1" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+        View Tasks and Notes
+        </button>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="popup" role="document">
+        <div class="wrapper">
+        <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Your Tasks and Notes</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        <div class="modal-body">
+        {{#each tasks}} {{#if this.name}}
+        <a href="/task/{{this.id}}">{{this.name}}</a>
+        <br> {{/if}} {{/each}}
+        </div>
+        <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        {{!-- <button type="button" class="btn btn-primary">Save changes</button> --}}
+        </div>
+        </div>
+        </div>
+        </div>
+        {{!-- ------------------------------------------------------------------------------------------ --}}
+      </form>
+      {{!-- To input images or videos, etc. --}} {{!-- example: Type this line ►
+      <form action="/tasks/create" enctype="multipart/form-data" method="POST"> --}} {{!-- This goes after the above line. ►
+      <input type="file" name="photo"> --}} {{!-- after / whatever, include this: uploadCloud.single('photo'), //Include this in your router.post --}} {{!--
+      require multer at top of your code like where express is, and then require uploadCload with a relative path ../config/cloudinary');
+      --}}
+      <div>
+      <br>
+      <br>
+      <form action="/tasks/comments">
+      <div class="form-group">
+      <label id="comment-1" for="comment" style="font-size:0.5vw;">Comments about your tasks and notes:</label>
+      <textarea class="form-control" rows="5" id="comment" name="comments-text-area"></textarea>
+      </div>
+      <button id="btn4" class="btn btn-primary" type="submit" name="save-button">Save Comments</button>
+      </form>
+      <br>
+      <br>
+      </div>
+      <a id="btn5" class="btn btn-primary" href="https://calendar.google.com/calendar/r?tab=wc&pli=1" role="button" style="font-size:0.5vw;">Click Here to Go to your calender</a>
+      <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <div id="my-calendar"></div>
+      </div>
+      <!--(./col-lg-12 col-md-12 col-sm-12 col-xs-12"BELOW ROW:)-->
+      </div>
+      <!--(./row)-->
+    </div>
+    <!--(./COntainer")-->
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  </body>
+</html>

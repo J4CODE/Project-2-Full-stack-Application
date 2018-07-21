@@ -1,0 +1,23 @@
+<body class="signup-page">
+
+  <h1 class="second-title">Sign Up Here to Use Notetastic</h1>
+
+<div>
+
+<h1>Sign Up</h1>
+<form action="/signup" method="post">
+  <label for="username">Username</label>
+  <input id="username" type="text" name="theUsername">
+  <label for="password">Password</label>
+  <input id="password" type="password" name="userPassword">
+  <button>Submit</button>
+</form>
+{{#if errorMessage}}
+<div>{{errorMessage}}</div>
+{{/if }}
+</div>
+
+<img class="note-pad-2" src="/images/note-pad-pencil.png">
+
+
+</body>
