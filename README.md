@@ -30,7 +30,7 @@ Application will be able to save tasks, which can also be edited and have an add
 User Calender.
 
 
-Below a calendar is displayed. The calendar can navigate from the current month to previous month to the next month by clicking on the arrow icon symbols located one the blue bar in the calendar design. The blue calendar bar is also a link bar, which has integration with the Google Calendar API. When clicked, a user will be brought to their own personal Google Calendar. The user must first sign in to the Google Calendar API, in order to view all of their personal calendar events. The events will then be stored in the users application database. 
+Below a calendar is displayed. The calendar can navigate from the current month to previous month to the next month by clicking on the arrow icon symbols located on the blue bar in the calendar design. The blue calendar bar is also a link bar, which has integration with Google Calendars API. When clicked, a user will be brought to their own personal Google Calendar. The user must first sign in to the Google Calendar API, in order to view all of their personal calendar events. The events will then be stored in the users application database. 
 
 An email will also be sent as a reminder for all upcoming calendar events. The Day of events scheduled will also be emailed before the scheduled hour. Calendar displayed on application page is also fully functional but is disabled as it will be included as a full feature extra with a paid description. Still working on testing, debugging and application interface between both calender's and testing before Calendar displayed on application page will be activated.
 
